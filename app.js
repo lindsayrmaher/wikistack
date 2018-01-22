@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', require('./routes'));
 
 app.get('/', function(req, res) {
-	res.render('./views');
+	res.render('../views/index');
 })
 
 models.db.sync({force: true})
