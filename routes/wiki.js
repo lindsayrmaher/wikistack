@@ -15,12 +15,25 @@ router.post('/', function(req, res, next) {
 	})
 
 	page.save();
-	res.redirect('/')
-	// res.json(req.body);
+	res.json(page);
 })
 
 router.get('/add', function(req, res, next) {
-	res.render('../views/addpage');
+	page.save().then(function(savedPage){
+  	res.redirect(savedPage.route); // route virtual FTW
+	}).catch(next);
+})
+
+router.get('/:urlTitle', function(req, res, next) {
+	Page.findOne({
+		where: {
+			urlTitle: req.params.urlTitle
+		}
+	})
+	.then(function(foundPage) {
+		res.render('../views/wikipage', {page: foundPage})
+	})
+	.catch(next);
 })
 
 module.exports = router;
