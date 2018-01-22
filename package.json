@@ -2,10 +2,10 @@
   "name": "wikistack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -e html,js,css ./path/to/your/app.js"
+    "start": "nodemon -e html,js,css ./Users/lrose49/Developer/Immersive/wikistack/app.js"
   },
   "author": "",
   "license": "ISC",
